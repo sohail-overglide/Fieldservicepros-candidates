@@ -11,10 +11,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { AvailabilityStatus } from "@/components/availability-status";
 
 export default function DashboardPage() {
-    const [selectedJob, setSelectedJob] = useState<any>(null);
+    const [selectedJob, setSelectedJob] = useState<typeof jobs[0] | null>(null);
     const [sheetOpen, setSheetOpen] = useState(false);
 
-    const handleJobClick = (job: any) => {
+    const handleJobClick = (job: typeof jobs[0]) => {
         setSelectedJob(job);
         setSheetOpen(true);
     };
@@ -51,8 +51,8 @@ export default function DashboardPage() {
 
     return (
         <div className="min-h-screen bg-slate-50 dark:bg-slate-950 relative">
-            {/* Lilac Gradient Background */}
-            <div className="absolute inset-x-0 top-0 h-[500px] bg-gradient-to-b from-purple-100/60 to-transparent pointer-events-none dark:from-purple-900/10" />
+            {/* Brand Gradient Background */}
+            <div className="absolute inset-x-0 top-0 h-[600px] bg-gradient-to-b from-brand-pale/50 via-brand-pale/5 to-transparent pointer-events-none dark:from-brand-emerald/10" />
 
             {/* Desktop Sidebar */}
             <CandidateSidebar />
@@ -76,7 +76,7 @@ export default function DashboardPage() {
                         </Sheet>
                     </div>
 
-                    <div className="flex items-center gap-4 text-sm font-medium text-slate-500">
+                    <div className="flex items-center gap-4 text-sm font-bold text-brand-grey dark:text-slate-400">
                         <span className="hidden md:inline-block">/ Dashboard</span>
                     </div>
 
@@ -116,9 +116,11 @@ export default function DashboardPage() {
                             <input
                                 type="text"
                                 placeholder="Search for roles (e.g. 'HVAC Technician in Austin')..."
-                                className="w-full h-12 pl-11 pr-4 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm"
+                                className="w-full h-12 pl-11 pr-4 rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm focus:ring-2 focus:ring-brand-emerald/20 focus:border-brand-emerald outline-none transition-all text-sm"
                             />
-                            <Button className="absolute right-1.5 top-1.5 h-9 rounded-full px-6">
+                            <Button
+                                className="absolute right-1.5 top-1.5 h-9 rounded-full px-6 bg-[#019446] hover:bg-[#019446]/90 text-white border-none z-20 shadow-sm"
+                            >
                                 Search
                             </Button>
                         </div>
@@ -136,7 +138,9 @@ export default function DashboardPage() {
                                 <p className="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">{stat.label}</p>
                                 <div className="flex items-end justify-between">
                                     <span className="text-3xl font-bold text-slate-900 dark:text-slate-100">{stat.value}</span>
-                                    <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded-full font-medium">{stat.sub}</span>
+                                    <span className="text-xs text-brand-emerald bg-brand-pale/20 dark:bg-brand-emerald/10 px-2.5 py-1 rounded-full font-bold uppercase tracking-wider border border-brand-emerald/5">
+                                        {stat.sub}
+                                    </span>
                                 </div>
                             </div>
                         ))}
@@ -146,7 +150,7 @@ export default function DashboardPage() {
                     <section className="space-y-4">
                         <div className="flex items-center justify-between">
                             <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">Recommended for You</h2>
-                            <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80">View All</Button>
+                            <Button variant="ghost" size="sm" className="text-brand-emerald font-bold hover:text-emerald-700 hover:bg-brand-pale/20 transition-all">View All</Button>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 pb-20 md:pb-0">

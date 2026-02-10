@@ -32,7 +32,7 @@ export function CandidateSidebar() {
         <aside className="fixed inset-y-0 left-0 z-50 w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex flex-col hidden md:flex">
             {/* Logo Area */}
             <div className="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-800">
-                <img src="/logo.svg" alt="FieldService Pros" className="h-8 w-auto" />
+                <img src="/logo.png" alt="FieldService Pros" className="h-14 w-auto object-contain" />
             </div>
 
             {/* Navigation */}
@@ -44,9 +44,9 @@ export function CandidateSidebar() {
                             key={item.name}
                             href={item.href}
                             className={cn(
-                                "group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all",
+                                "group flex items-center px-3 py-2.5 text-sm font-bold rounded-xl transition-all",
                                 isActive
-                                    ? "bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-slate-100"
+                                    ? "bg-brand-pale/20 dark:bg-brand-emerald/10 text-brand-emerald font-bold border-r-4 border-brand-emerald shadow-sm"
                                     : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-slate-200"
                             )}
                         >
@@ -54,8 +54,8 @@ export function CandidateSidebar() {
                                 className={cn(
                                     "mr-3 h-5 w-5 flex-shrink-0 transition-colors",
                                     isActive
-                                        ? "text-slate-900 dark:text-slate-100"
-                                        : "text-slate-400 group-hover:text-slate-500 dark:group-hover:text-slate-300"
+                                        ? "text-brand-emerald"
+                                        : "text-slate-400 group-hover:text-brand-emerald dark:group-hover:text-brand-emerald/80"
                                 )}
                             />
                             {item.name}
@@ -74,11 +74,8 @@ export function CandidateSidebar() {
                                     <AvatarImage src="/avatar.jpg" alt="User Avatar" className="object-cover" />
                                     <AvatarFallback className="text-slate-700 dark:text-slate-300">JD</AvatarFallback>
                                 </Avatar>
-                                <div className="flex-1 min-w-0 text-left">
-                                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400 truncate">
-                                        Field Service Pro
-                                    </p>
-                                    <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate group-hover:text-primary transition-colors">
+                                <div className="flex-1 min-w-0 text-left space-y-0.5">
+                                    <p className="text-sm font-bold text-slate-900 dark:text-slate-100 truncate group-hover:text-brand-emerald transition-colors">
                                         John Doe
                                     </p>
                                 </div>
@@ -118,7 +115,7 @@ export function CandidateSidebar() {
                                     fill="transparent"
                                     strokeDasharray={100}
                                     strokeDashoffset={14}
-                                    className="text-purple-500" // matching the purple/blue gradient from image
+                                    className="text-brand-emerald"
                                     strokeLinecap="round"
                                 />
                             </svg>

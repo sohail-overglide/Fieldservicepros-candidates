@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Upload, FileText, CheckCircle2, Loader2, X } from "lucide-react";
+import { useState, useRef } from "react";
+import { Upload, FileText, CheckCircle2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -98,14 +98,14 @@ export function ResumeUploader() {
                             accept=".pdf,.doc,.docx"
                             onChange={handleFileSelect}
                         />
-                        <div className="w-16 h-16 bg-blue-50 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4 text-primary">
+                        <div className="w-16 h-16 bg-brand-pale dark:bg-brand-emerald/20 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-emerald shadow-sm">
                             <Upload className="w-8 h-8" />
                         </div>
                         <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-2">
                             Upload Resume
                         </h3>
                         <p className="text-slate-500 dark:text-slate-400 mb-6 px-4 leading-relaxed">
-                            Drop your resume here or tap to browse. We'll extract your skills automatically.
+                            Drop your resume here or tap to browse. We&apos;ll extract your skills automatically.
                         </p>
                         <Button variant="outline" className="w-full h-12 rounded-xl text-base">
                             Select PDF or DOCX
@@ -119,7 +119,7 @@ export function ResumeUploader() {
                     >
                         <div className="flex items-center justify-between mb-6">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center text-green-600 dark:text-green-400">
+                                <div className="w-12 h-12 bg-brand-pale dark:bg-brand-emerald/20 rounded-2xl flex items-center justify-center text-brand-emerald shadow-sm">
                                     <FileText className="w-6 h-6" />
                                 </div>
                                 <div className="text-left">
@@ -163,10 +163,10 @@ export function ResumeUploader() {
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="mt-6 flex items-center gap-2 text-green-600 dark:text-green-400 text-sm font-medium justify-center bg-green-50 dark:bg-green-900/10 py-3 rounded-xl"
+                                className="mt-6 flex items-center gap-2 text-brand-emerald dark:text-emerald-400 text-sm font-bold tracking-tight justify-center bg-brand-pale/20 dark:bg-brand-emerald/10 py-3 rounded-xl border border-brand-emerald/10"
                             >
                                 <CheckCircle2 className="w-5 h-5" />
-                                <span>Redirecting to profile...</span>
+                                <span>Optimization Complete. Redirecting...</span>
                             </motion.div>
                         )}
                     </motion.div>

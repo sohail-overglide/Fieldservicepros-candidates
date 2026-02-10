@@ -32,7 +32,7 @@ export function OneClickApplyDrawer({ jobTitle, companyName, matchScore, trigger
             particleCount: 150,
             spread: 70,
             origin: { y: 0.8 },
-            colors: ['#2563eb', '#93c5fd', '#3b82f6', '#ffffff'] // Blueish theme
+            colors: ['#019446', '#90C13E', '#CBE5BF', '#ffffff'] // Brand theme
         });
 
         setApplied(true);
@@ -52,7 +52,7 @@ export function OneClickApplyDrawer({ jobTitle, companyName, matchScore, trigger
 
     if (applied && !isOpen) {
         return (
-            <Button variant="outline" disabled className="w-full bg-green-50 text-green-600 border-green-200">
+            <Button variant="outline" disabled className="w-full bg-brand-pale/30 text-brand-emerald border-brand-emerald/10 font-bold">
                 <CheckCircle2 className="w-4 h-4 mr-2" />
                 Applied
             </Button>
@@ -63,12 +63,12 @@ export function OneClickApplyDrawer({ jobTitle, companyName, matchScore, trigger
         <Drawer open={isOpen} onOpenChange={handleOpenChange}>
             <DrawerTrigger asChild>
                 {applied ? (
-                    <Button variant="outline" disabled className="w-full bg-green-50 text-green-600 border-green-200">
+                    <Button variant="outline" disabled className="w-full bg-brand-pale/30 text-brand-emerald border-brand-emerald/10 font-bold">
                         <CheckCircle2 className="w-4 h-4 mr-2" />
                         Applied
                     </Button>
                 ) : (
-                    <Button className="w-full mt-4 bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900" onClick={(e) => e.stopPropagation()}>
+                    <Button className="w-full mt-4 bg-brand-emerald hover:bg-emerald-700 text-white border-none shadow-lg shadow-brand-emerald/10" onClick={(e) => e.stopPropagation()}>
                         {triggerText}
                     </Button>
                 )}
@@ -79,7 +79,7 @@ export function OneClickApplyDrawer({ jobTitle, companyName, matchScore, trigger
                         <>
                             <DrawerHeader>
                                 <div className="flex justify-center mb-4">
-                                    <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-2xl font-bold">
+                                    <div className="w-16 h-16 rounded-full bg-brand-pale flex items-center justify-center text-brand-emerald text-2xl font-bold border border-brand-emerald/10">
                                         {companyName.charAt(0)}
                                     </div>
                                 </div>
@@ -104,7 +104,7 @@ export function OneClickApplyDrawer({ jobTitle, companyName, matchScore, trigger
                                 </div>
                             </div>
                             <DrawerFooter className="pt-2">
-                                <Button size="lg" className="w-full text-lg shadow-xl shadow-blue-500/20" onClick={handleApply}>
+                                <Button size="lg" className="w-full text-lg bg-brand-emerald hover:bg-emerald-700 text-white border-none shadow-xl shadow-brand-emerald/20" onClick={handleApply}>
                                     <Send className="w-5 h-5 mr-2" />
                                     Send Application
                                 </Button>
@@ -116,10 +116,10 @@ export function OneClickApplyDrawer({ jobTitle, companyName, matchScore, trigger
                     ) : (
                         <>
                             <DrawerHeader>
-                                <div className="mx-auto w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-4">
+                                <div className="mx-auto w-16 h-16 bg-brand-pale text-brand-emerald rounded-full flex items-center justify-center mb-4 border border-brand-emerald/10">
                                     <CheckCircle2 className="w-10 h-10" />
                                 </div>
-                                <DrawerTitle className="text-center text-2xl text-green-700">Application Sent!</DrawerTitle>
+                                <DrawerTitle className="text-center text-2xl text-brand-emerald font-bold">Application Sent!</DrawerTitle>
                                 <DrawerDescription className="text-center">
                                     Good luck! {companyName} will review your profile shortly.
                                 </DrawerDescription>

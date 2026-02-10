@@ -26,7 +26,7 @@ export default function OnboardingPage() {
             <main className="flex-1 flex flex-col items-center justify-center p-6 -mt-10">
                 <div className="w-full max-w-md space-y-8 text-center">
                     <div className="space-y-4">
-                        <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto text-primary text-3xl">
+                        <div className="w-16 h-16 bg-brand-pale dark:bg-brand-emerald/20 rounded-2xl flex items-center justify-center mx-auto text-primary text-3xl shadow-sm border border-brand-emerald/10">
                             👋
                         </div>
                         <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">

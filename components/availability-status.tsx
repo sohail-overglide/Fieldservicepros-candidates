@@ -14,9 +14,9 @@ interface StatusOption {
 }
 
 const statuses: StatusOption[] = [
-    { value: "available", label: "Available", color: "bg-green-500" },
-    { value: "open", label: "Open to Offers", color: "bg-blue-500" },
-    { value: "busy", label: "Busy", color: "bg-yellow-500" },
+    { value: "available", label: "Available", color: "bg-brand-lime" },
+    { value: "open", label: "Open to Offers", color: "bg-brand-emerald" },
+    { value: "busy", label: "Busy", color: "bg-amber-500" },
     { value: "offline", label: "Offline", color: "bg-slate-400" },
 ];
 
@@ -31,7 +31,7 @@ export function AvailabilityStatus({ className }: { className?: string }) {
             <PopoverTrigger asChild>
                 <button
                     className={cn(
-                        "flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer group",
+                        "flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors cursor-pointer group shadow-sm",
                         className
                     )}
                 >

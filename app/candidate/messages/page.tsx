@@ -149,7 +149,7 @@ export default function MessagesPage() {
                                                         <AvatarFallback>{recruiter.name[0]}</AvatarFallback>
                                                     </Avatar>
                                                     {recruiter.status === "online" && (
-                                                        <span className="absolute bottom-0.5 right-0.5 w-3 h-3 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+                                                        <span className="absolute bottom-0.5 right-0.5 w-3 h-3 bg-brand-lime border-2 border-white dark:border-slate-900 rounded-full"></span>
                                                     )}
                                                 </div>
                                                 <div className="flex-1 min-w-0">
@@ -191,7 +191,7 @@ export default function MessagesPage() {
                                         <p className="text-xs text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
                                             {selectedRecruiter.role}
                                             {selectedRecruiter.status === "online" && (
-                                                <span className="w-1.5 h-1.5 bg-green-500 rounded-full inline-block"></span>
+                                                <span className="w-1.5 h-1.5 bg-brand-lime rounded-full inline-block"></span>
                                             )}
                                         </p>
                                     </div>

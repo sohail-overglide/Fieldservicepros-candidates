@@ -50,7 +50,7 @@ export function JobDetailsSheet({ job, open, onOpenChange, onApply, isApplied }:
                                     <span className="text-sm">{job.postedAt || "Posted 2 days ago"}</span>
                                 </div>
                             </div>
-                            <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800 shrink-0">
+                            <Badge variant="outline" className="bg-brand-pale/20 text-brand-emerald border-brand-emerald/10 dark:bg-brand-emerald/10 dark:text-emerald-400 dark:border-brand-emerald/20 shrink-0 font-bold">
                                 {job.matchScore}% Match
                             </Badge>
                         </div>
@@ -94,7 +94,7 @@ export function JobDetailsSheet({ job, open, onOpenChange, onApply, isApplied }:
                                     "Document all service activities in CMMS"
                                 ]).map((item, i) => (
                                     <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-300">
-                                        <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                                        <CheckCircle2 className="w-5 h-5 text-brand-emerald shrink-0 mt-0.5" />
                                         <span>{item}</span>
                                     </li>
                                 ))}
@@ -134,13 +134,27 @@ export function JobDetailsSheet({ job, open, onOpenChange, onApply, isApplied }:
                 </ScrollArea>
 
                 {/* Footer Actions */}
-                {!isApplied && (
-                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-200 dark:bg-slate-900 dark:border-slate-800">
-                        <Button size="lg" className="w-full text-lg shadow-lg shadow-primary/20" onClick={onApply}>
-                            Apply Now <ArrowRight className="ml-2 w-5 h-5" />
-                        </Button>
-                    </div>
-                )}
+                <div className="sticky bottom-0 left-0 right-0 p-4 bg-white border-t border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+                    <Button
+                        size="lg"
+                        className={`w-full text-lg border-none shadow-xl transition-all duration-300 ${isApplied
+                            ? "bg-green-600 hover:bg-green-600 text-white cursor-default"
+                            : "bg-brand-emerald hover:bg-emerald-700 text-white shadow-brand-emerald/20"
+                            }`}
+                        onClick={isApplied ? undefined : onApply}
+                        disabled={isApplied}
+                    >
+                        {isApplied ? (
+                            <>
+                                <CheckCircle2 className="mr-2 w-5 h-5" /> Successfully Applied
+                            </>
+                        ) : (
+                            <>
+                                Apply Now <ArrowRight className="ml-2 w-5 h-5" />
+                            </>
+                        )}
+                    </Button>
+                </div>
             </SheetContent>
         </Sheet>
     );

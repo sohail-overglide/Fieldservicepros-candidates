@@ -23,10 +23,10 @@ export default function VideoIntroPage() {
 
             <main className="max-w-md mx-auto px-6 space-y-6">
                 <div className="text-center space-y-3">
-                    <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto text-purple-600 dark:text-purple-400">
+                    <div className="w-14 h-14 bg-brand-pale dark:bg-brand-emerald/20 rounded-2xl flex items-center justify-center mx-auto text-brand-emerald shadow-sm border border-brand-emerald/10">
                         <VideoIcon className="w-7 h-7" />
                     </div>
-                    <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                    <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
                         Stand Out from the Crowd
                     </h1>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -38,7 +38,7 @@ export default function VideoIntroPage() {
                     <VideoRecorder />
                 </div>
 
-                <div className="flex items-start gap-3 p-4 bg-blue-50 dark:bg-blue-900/10 rounded-xl text-sm text-blue-700 dark:text-blue-300">
+                <div className="flex items-start gap-3 p-4 bg-brand-pale/20 dark:bg-brand-emerald/10 rounded-xl text-sm text-brand-emerald dark:text-emerald-300 border border-brand-emerald/10">
                     <span className="text-xl">💡</span>
                     <p>
                         <strong>Pro Tip:</strong> Ensure you have good lighting and minimal background noise.

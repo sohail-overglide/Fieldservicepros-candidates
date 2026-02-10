@@ -141,7 +141,7 @@ export default function SettingsPage() {
 
                         {/* Job Preferences */}
                         <TabsContent value="job-preferences" className="space-y-4">
-                            <div className="bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-900 p-4 rounded-lg flex items-start gap-3 text-sm text-blue-800 dark:text-blue-200 mb-6">
+                            <div className="bg-brand-pale/20 dark:bg-brand-emerald/10 border border-brand-emerald/10 p-4 rounded-lg flex items-start gap-3 text-sm text-brand-emerald dark:text-emerald-400 mb-6">
                                 <div className="mt-0.5">👁️</div>
                                 <p>Your job preferences are visible for matchers. When they will be searching for candidates they will take this into account to send more relevant job interest requests.</p>
                             </div>

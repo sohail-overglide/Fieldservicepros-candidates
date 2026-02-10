@@ -40,13 +40,13 @@ export function JobCard({
                     <h3 className="font-bold text-lg text-slate-900 dark:text-slate-100 leading-tight mb-1">
                         {title}
                     </h3>
-                    <div className="flex items-center text-slate-500 text-sm">
-                        <Building className="w-3.5 h-3.5 mr-1" />
+                    <div className="flex items-center text-brand-grey dark:text-slate-400 text-sm font-medium">
+                        <Building className="w-3.5 h-3.5 mr-1 text-brand-emerald" />
                         {company}
                     </div>
                 </div>
                 <div className="text-right">
-                    <div className="inline-flex items-center justify-center px-2 py-1 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 text-xs font-bold rounded-lg mb-1">
+                    <div className="inline-flex items-center justify-center px-2 py-1 bg-brand-pale/20 dark:bg-brand-emerald/10 text-brand-emerald dark:text-emerald-400 text-xs font-bold rounded-lg mb-1 border border-brand-emerald/10 shadow-sm">
                         {matchScore}% Match
                     </div>
                     <p className="text-xs text-slate-400">{distance} away</p>
@@ -80,7 +80,7 @@ export function JobCard({
 
             {isApplied ? (
                 <Button
-                    className="w-full mt-4 bg-slate-900 hover:bg-slate-800 text-white dark:bg-slate-100 dark:text-slate-900"
+                    className="w-full mt-4 bg-brand-emerald hover:bg-emerald-700 text-white border-none shadow-lg shadow-brand-emerald/10"
                     onClick={(e: React.MouseEvent) => {
                         e.stopPropagation();
                         onClick?.();

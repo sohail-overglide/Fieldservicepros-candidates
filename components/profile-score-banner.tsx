@@ -35,8 +35,8 @@ export function ProfileScoreBanner() {
                     />
                     <defs>
                         <linearGradient id="score-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#d8b4fe" />
-                            <stop offset="100%" stopColor="#8b5cf6" />
+                            <stop offset="0%" stopColor="#90C13E" />
+                            <stop offset="100%" stopColor="#019446" />
                         </linearGradient>
                     </defs>
                 </svg>

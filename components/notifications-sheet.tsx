@@ -3,7 +3,7 @@
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { X, Briefcase, Star, MessageSquare } from "lucide-react";
+import { Briefcase, Star, MessageSquare } from "lucide-react";
 
 interface Notification {
     id: string;
@@ -83,7 +83,7 @@ export function NotificationsSheet({ open, onOpenChange }: NotificationsSheetPro
                         {mockNotifications.map((notification) => (
                             <div
                                 key={notification.id}
-                                className={`p-5 flex gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer ${!notification.isRead ? 'bg-blue-50/30 dark:bg-blue-900/5' : ''}`}
+                                className={`p-5 flex gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors cursor-pointer ${!notification.isRead ? 'bg-brand-pale/20 dark:bg-brand-emerald/5' : ''}`}
                             >
                                 <div className="mt-1 shrink-0">
                                     {notification.type === 'job' && <Briefcase className="w-5 h-5 text-slate-400" />}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
@@ -32,7 +32,7 @@ const certifications = [
 ];
 
 export function PreferencesForm() {
-    const router = useRouter(); // Keeping usage if needed (though Link is used)
+    // PreferencesForm state
     const [travelTolerance, setTravelTolerance] = useState([20]);
     const [selectedTools, setSelectedTools] = useState<string[]>([]);
     const [open, setOpen] = useState(false);
@@ -118,9 +118,9 @@ export function PreferencesForm() {
                     {selectedCerts.map((certVal) => {
                         const label = certifications.find(c => c.value === certVal)?.label || certVal;
                         return (
-                            <Badge key={certVal} variant="secondary" className="pl-3 pr-1 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 hover:bg-blue-100 border border-blue-200 dark:border-blue-800">
+                            <Badge key={certVal} variant="secondary" className="pl-3 pr-1 py-1 bg-brand-pale/30 dark:bg-brand-emerald/10 text-brand-emerald dark:text-emerald-400 hover:bg-brand-pale/50 border border-brand-emerald/10">
                                 {label}
-                                <Button variant="ghost" size="icon" className="h-4 w-4 ml-1 rounded-full hover:bg-blue-200/50" onClick={() => removeCert(certVal)}>
+                                <Button variant="ghost" size="icon" className="h-4 w-4 ml-1 rounded-full hover:bg-brand-pale/50" onClick={() => removeCert(certVal)}>
                                     <X className="w-3 h-3" />
                                 </Button>
                             </Badge>

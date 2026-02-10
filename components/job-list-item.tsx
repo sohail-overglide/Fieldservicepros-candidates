@@ -15,7 +15,9 @@ export interface JobListItemProps {
     isNew?: boolean;
     overlap?: string;
     timezone?: string;
+    isSaved?: boolean;
     onClick?: () => void;
+    onSave?: () => void;
 }
 
 export function JobListItem({
@@ -29,7 +31,9 @@ export function JobListItem({
     isNew,
     overlap,
     timezone,
+    isSaved,
     onClick,
+    onSave,
 }: JobListItemProps) {
     return (
         <div
@@ -40,18 +44,23 @@ export function JobListItem({
             <div className="flex justify-between items-start mb-2">
                 <div className="flex items-center gap-2">
                     {isNew && (
-                        <span className="w-2 h-2 rounded-full bg-green-500"></span>
+                        <span className="w-2 h-2 rounded-full bg-brand-emerald shadow-[0_0_8px_rgba(1,148,70,0.4)]"></span>
                     )}
                     <h3 className="text-lg font-semibold text-slate-900 dark:text-slate-100 group-hover:text-primary transition-colors">
                         {title}
                     </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                    <span className="text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 px-3 py-1 rounded-full">
+                    <span className="text-sm font-bold text-brand-emerald dark:text-emerald-400 bg-brand-pale/30 dark:bg-brand-emerald/10 px-3 py-1 rounded-full border border-brand-emerald/10">
                         Accepting Applications
                     </span>
-                    <Button variant="ghost" size="icon" className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
-                        <Bookmark className="w-5 h-5" />
+                    <Button
+                        variant="ghost"
+                        size="icon"
+                        className={`hover:text-brand-emerald ${isSaved ? 'text-brand-emerald' : 'text-slate-400 hover:text-slate-600 dark:hover:text-slate-300'}`}
+                        onClick={(e) => { e.stopPropagation(); onSave?.(); }}
+                    >
+                        <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
                     </Button>
                 </div>
             </div>
